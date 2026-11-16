@@ -16,10 +16,8 @@
 ## Anggota kelompok
 
 | Nama | NIM | Username GitHub | Kontribusi utama |
-|---|---|---|---|
-| ✍️ | ✍️ | ✍️ | ✍️ misal: menjalankan eksperimen, menulis Bagian 3 |
-| ✍️ | ✍️ | ✍️ | ✍️ |
-| ✍️ | ✍️ | ✍️ | ✍️ |
+|Cecilia Hazel Kersten Ginting | 12343010 | cecilia123430105 | Ketua kelompok, koordinasi, dan pengelolaan repository |
+| Mutiarasari Lilinantri Nainggolan | 123430123 | nainggolanmutiara23-coder | Persiapan eksperimen, pengujian skenario augmentasi, dan analisis hasil |
 
 ## 1. Pertanyaan
 
@@ -30,9 +28,9 @@ Augmentasi apa yang membantu U-Net menemukan polip pada citra kolonoskopi, dan a
 <!-- Isi dari Bagian 2 notebook. Pastikan CEPAT = False untuk hasil akhir. -->
 
 - Dataset: Kvasir-SEG (1000 citra kolonoskopi + mask polip), diperkecil ke 128 × 128 piksel.
-- Data uji: 200 citra (tetap). Data latih: ✍️ citra per ulangan.
-- Model: U-Net mini (±0,5 juta parameter), ✍️ epoch, ✍️ ulangan per skenario.
-- Dijalankan di: ✍️ (misal: Google Colab T4 / laptop CPU / Mac M1).
+- Data uji: 200 citra (tetap). Data latih: 200 citra per ulangan.
+- Model: U-Net mini (±0,5 juta parameter), 40 epoch, 3 ulangan per skenario.
+- Dijalankan di: Google Colab dengan GPU T4 
 
 ![Contoh data](hasil/contoh_data.png)
 
@@ -43,9 +41,9 @@ Augmentasi apa yang membantu U-Net menemukan polip pada citra kolonoskopi, dan a
 
 | Skenario | Augmentasi (kode) | Alasan klinis | Hipotesis: Dice naik/turun/sama? |
 |---|---|---|---|
-| Tanpa augmentasi | — | Pembanding | — |
-| ✍️ | ✍️ `v2....` | ✍️ | ✍️ |
-| ✍️ | ✍️ `v2....` | ✍️ | ✍️ |
+| Tanpa augmentasi | — | Digunakan sebagai pembanding tanpa transformasi citra. | Acuan |
+| Flip horizontal | `v2.RandomHorizontalFlip(p=0.5)` | Orientasi horizontal citra dapat bervariasi selama pemeriksaan kolonoskopi. | Diperkirakan naik |
+| Kecerahan & kontras | `v2.ColorJitter(brightness=0.3, contrast=0.3)` | Intensitas pencahayaan dan kontras citra dapat berbeda selama pemeriksaan kolonoskopi. | Diperkirakan naik |
 
 Contoh augmentasi yang dicoba:
 
@@ -81,7 +79,8 @@ Contoh augmentasi yang dicoba:
 
 <!-- Siapa mengerjakan apa. Penilaian proses kerja dilihat dari riwayat commit tiap anggota. -->
 
-✍️
+- Cecilia Hazel Kersten Ginting: Koordinasi kelompok, pengelolaan repository, dan penyusunan laporan.
+- Mutiarasari Lilinantri Nainggolan: Persiapan notebook, pengujian skenario augmentasi, serta analisis hasil eksperimen.
 
 ## 8. Penggunaan AI
 
@@ -89,7 +88,7 @@ Contoh augmentasi yang dicoba:
      Contoh: "Claude Code (CLI) untuk menulis skenario augmentasi dan memperbaiki error di Bagian 4.
      Draf Bagian 6 ditulis sendiri, lalu dirapikan bahasanya dengan bantuan AI." -->
 
-✍️
+ChatGPT digunakan untuk membantu memahami alur kode notebook, mengidentifikasi dan memperbaiki error saat menjalankan program, serta menyusun alternatif skenario augmentasi dan hipotesis awal. Eksperimen dan pengambilan hasil dilakukan melalui Google Colab.
 
 ## Cara menjalankan ulang
 
