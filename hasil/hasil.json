@@ -1,0 +1,54 @@
+{
+  "pengaturan": {
+    "CEPAT": false,
+    "JUMLAH_CITRA_LATIH": 400,
+    "JUMLAH_EPOCH": 50,
+    "JUMLAH_ULANGAN": 3,
+    "UKURAN_BATCH": 16,
+    "LEARNING_RATE": 0.0005,
+    "device": "cuda",
+    "skenario": {
+      "Tanpa augmentasi": "None",
+      "Flip horizontal": "RandomHorizontalFlip(p=0.5)",
+      "Kecerahan & kontras": "ColorJitter(brightness=(0.8, 1.2), contrast=(0.8, 1.2))"
+    }
+  },
+  "hasil": {
+    "Tanpa augmentasi": {
+      "dice": [
+        0.6780190467834473,
+        0.6784361004829407,
+        0.6363046765327454
+      ],
+      "iou": [
+        0.5720280408859253,
+        0.5749809145927429,
+        0.5242698788642883
+      ]
+    },
+    "Flip horizontal": {
+      "dice": [
+        0.6895999908447266,
+        0.7110393047332764,
+        0.7034517526626587
+      ],
+      "iou": [
+        0.5840519070625305,
+        0.6137071847915649,
+        0.5927060842514038
+      ]
+    },
+    "Kecerahan & kontras": {
+      "dice": [
+        0.6827014088630676,
+        0.646731436252594,
+        0.6370231509208679
+      ],
+      "iou": [
+        0.5644703507423401,
+        0.5519420504570007,
+        0.5299196243286133
+      ]
+    }
+  }
+}
